@@ -1,8 +1,12 @@
 #include <string>
+#include <list>
 
 class BigInt {
  private:
-  /* data */
+  std::list<int> number;
+  int base_size = 9;
+  int max_number = 1000000000;
+
  public:
   BigInt();                     // Default constructor
   BigInt(int value);            // Int constructor
