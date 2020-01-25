@@ -1,0 +1,22 @@
+# Ignore all
+*
+
+# Unignore all dirs
+!*/
+
+# Unignore .c(pp) and .h(pp) files
+!*.c
+!*.cpp
+!*.h
+!*.hpp
+
+# Unignore git settings
+!.gitignore
+!.gitattributes
+
+# Unignore .md files
+!*.md
+
+# Unignore makefiles
+!*/makefile
+!*/Makefile
