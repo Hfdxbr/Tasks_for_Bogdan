@@ -1,5 +1,5 @@
-#include <string>
 #include <list>
+#include <string>
 
 class BigInt {
  private:
@@ -41,16 +41,15 @@ class BigInt {
 
 class BigInt::Exception {
  public:
-  enum class ErrorCode {
-    NO_ERROR,
-    /* Errors */
-  };
+  enum class ErrorCode { NO_ERROR, WRONG_INPUT };
 
  private:
   ErrorCode code;
   std::string msg;
 
  public:
-  Exception(ErrorCode err_code, std::string err_msg);
+  Exception(ErrorCode err_code, std::string err_msg)
+      : code(err_code), msg(err_msg) {}
   std::string what() { return msg; }
+  ErrorCode status() { return code; }
 };
