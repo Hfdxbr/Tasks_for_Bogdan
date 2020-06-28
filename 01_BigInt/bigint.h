@@ -1,21 +1,14 @@
-#include <iostream>
 #include <string>
-#include <list>
-
-constexpr int piece_size = 9;
-constexpr int piece_val = 1000000000;
 
 class BigInt {
  private:
-  int sign = 1;
-  // static constexpr int piece_size = 9;
-  std::list<unsigned int> Number;
+  /* data */
  public:
-  BigInt() = default;                     // Default constructor
+  BigInt();                     // Default constructor
   BigInt(int value);            // Int constructor
   BigInt(std::string value);    // String constructor
   BigInt(const BigInt& other);  // Copy constructor
-  ~BigInt() = default;
+  ~BigInt();
 
   class Exception;
 
