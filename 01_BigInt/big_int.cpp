@@ -186,9 +186,11 @@ BigInt BigInt::operator-(const BigInt& other) const {
 
 BigInt & BigInt::operator+=(const BigInt& other) {
     *this = *this + other;
+    return *this;
 }
 BigInt & BigInt::operator-=(const BigInt& other) {
     *this = *this - other;
+    return *this;
 }
 BigInt BigInt::operator-() const {
     BigInt result;
@@ -201,13 +203,25 @@ BigInt BigInt::operator-() const {
 BigInt & BigInt::operator++() {
     BigInt temp(1);
     *this = *this + temp;
+    return *this;
 }
-//BigInt & BigInt::operator++(int);  // Postfix increment
+BigInt BigInt::operator++(int) {
+    BigInt result;
+    BigInt temp(1);
+    result = *this + temp;
+    return result;
+}
 BigInt & BigInt::operator--() {
     BigInt temp(1);
     *this = *this - temp;
+    return *this;
 }
-//BigInt & BigInt::operator--(int);
+BigInt BigInt::operator--(int) {
+    BigInt result;
+    BigInt temp(1);
+    result = *this - temp;
+    return result;
+}
 
 
 std::ostream & operator<<(std::ostream& os, const BigInt& number) {
