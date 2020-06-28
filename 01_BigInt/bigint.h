@@ -1,12 +1,8 @@
-#include <list>
 #include <string>
 
 class BigInt {
  private:
-  std::list<int> number;
-  int base_size = 9;
-  int max_number = 1000000000;
-
+  /* data */
  public:
   BigInt();                     // Default constructor
   BigInt(int value);            // Int constructor
@@ -41,15 +37,16 @@ class BigInt {
 
 class BigInt::Exception {
  public:
-  enum class ErrorCode { NO_ERROR, WRONG_INPUT };
+  enum class ErrorCode {
+    NO_ERROR,
+    /* Errors */
+  };
 
  private:
   ErrorCode code;
   std::string msg;
 
  public:
-  Exception(ErrorCode err_code, std::string err_msg)
-      : code(err_code), msg(err_msg) {}
+  Exception(ErrorCode err_code, std::string err_msg);
   std::string what() { return msg; }
-  ErrorCode status() { return code; }
 };
